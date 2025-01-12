@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume of Rockwon Seo - Work Experience</title>
+    <link rel="stylesheet" href="ExternalStyles.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Resume of Rockwon Seo</h1>
+    </div>
+
+    <!-- Work Experience Section -->
+    <div id="work-experience" class="section">
+        <h2>Work experience</h2>
+        <div class="flex-container">
+            <!-- Left Section -->
+            <div class="left-section purple-link">
+                <h3>Other pages</h3>
+                <ul>
+                    <li><a href="/~rs796883/External1.html" title="Go to Work Experience section">Work Experience</a>
+                    </li>
+                    <li><a href="/~rs796883/External2.html" title="Go to Educational Experience section">Educational
+                            Experience</a></li>
+                    <li><a href="/~rs796883/External3.html" title="Go to Related Awards and Skills section">Related
+                            Awards and Skills</a></li>
+                    <li><a href="/~rs796883/External4.html" title="Go to Salary Calculator section">Salary
+                            Calculator</a></li>
+                </ul>
+            </div>
+            <!-- Middle Section -->
+            <div class="middle-section blue-link">
+                <h3>Bliss Burger</h3>
+                <a href="https://www.blissburger.co.kr/" target="_blank"
+                    title="Visit the official Bliss Burger website">Bliss Burger site</a>
+                <p>Manager</p>
+                <p>2022</p>
+                <button onclick="displayBlissDuties()">Click</button>
+                <label for="blissDuties"> to see my top </label>
+                <input type="number" id="blissDuties" min="1" max="5" style="width: 30px;">
+                <label> job duties here:</label>
+                <p id="blissDutiesList"></p>
+            </div>
+            <!-- Right Section -->
+            <div class="right-section blue-link">
+                <h3>ROK Armed Forces</h3>
+                <a href="https://www.army.mil.kr/sites/army/index.do" target="_blank"
+                    title="Visit the official ROK Armed Forces website">ROK site</a>
+                <p>Surveillance Equipment Operator</p>
+                <p>2022-2024</p>
+                <button onclick="displayRokDuties()">Click</button>
+                <label for="rokDuties"> to see my top </label>
+                <input type="number" id="rokDuties" min="1" max="5" style="width: 30px;">
+                <label> job duties here:</label>
+                <p id="rokDutiesList"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Me Link Section -->
+    <div class="email-link">
+        <a href="mailto:rseo@albany.edu" title="Email Rockwon Seo">Email me!</a>
+    </div>
+
+    <script>
+        const blissDuties = ["-Inventory management", "-Staff scheduling", "-Customer service", "-Order fulfillment", "-Training new employees"];
+
+        function displayBlissDuties() {
+            let number = parseInt(document.getElementById("blissDuties").value);
+            let dutiesList = "";
+            if (!isNaN(number) && number > 0 && number <= blissDuties.length) {
+                for (let i = number - 1; i >= 0; i--) {
+                    dutiesList += blissDuties[i] + "<br>";
+                }
+                document.getElementById("blissDutiesList").innerHTML = dutiesList;
+            } else {
+                document.getElementById("blissDutiesList").innerHTML = "Please enter a valid number.";
+            }
+        }
+    </script>
+    <script>
+        const rokDuties = ["-Operating surveillance equipment", "-Monitoring security systems", "-Reporting security breaches", "-Maintaining equipment", "-Training new recruits"];
+
+        function displayRokDuties() {
+            let number = parseInt(document.getElementById("rokDuties").value);
+            let dutiesList = "";
+            if (!isNaN(number) && number > 0 && number <= rokDuties.length) {
+                for (let i = number - 1; i >= 0; i--) {
+                    dutiesList += rokDuties[i] + "<br>";
+                }
+                document.getElementById("rokDutiesList").innerHTML = dutiesList;
+            } else {
+                document.getElementById("rokDutiesList").innerHTML = "Please enter a valid number.";
+            }
+        }
+    </script>
+</body>
+
+</html>
